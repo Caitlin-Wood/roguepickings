@@ -22,64 +22,51 @@ h1, h2, h3, h4 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
-/* h1 {
-	font-size: 30px;
-}
-h2 {
-    font-size: 24px;
-}
-h3 {
-	font-size: 18px;
-}
-h4 {
-	font-size: 12px;
-}
-
-p {
-	font-size: 14px;
-	line-height: 21px;
-    padding: 0 30px;
-}
-*/
 
 /*The widths are in a percentage!*/
 /*header module; 14pt = 1em*/
 header {
-	height: 110px;
-	margin: 0 auto;
 	font-size:0.875em;
+	margin: 0 1.15em;
 }
 
 header h1 {
-	float: left;
+	text-align:center;
 	margin: 0;
-	font-size:2.143em;
-	padding: 1.267em 0 0.5em 1.75em;
+	font-size:2.14em;
+	padding: 1.25em 0 0.5em;
+	border-bottom: 3px solid #77a466 ;
 }
+
+
+
+/**** not needed as header h1 has border bottom but keep this for note later */
+/*    header h1:after {*/
+/*	  content: "";  This is necessary for the pseudo element to work. */
+/*    display: block;  This will put the pseudo element on its own line. */
+/*    margin: 0 auto;  This will center the border. */
+/*    width: 75%; Change this to whatever width you want. */
+/*    padding: 2% 5%;  This creates some space between the element and the border.  */
+/*    border-bottom: .17em solid #77a466 ;  This creates the border. Replace black with whatever color you want. */
+
 
 header h1 span {
 	color: #77a466;
 }
 
-header h1:after {
-	content: ""; /* This is necessary for the pseudo element to work. */ 
-    display: block; /* This will put the pseudo element on its own line. */
-    margin: 0 auto; /* This will center the border. */
-    width: 75%; /* Change this to whatever width you want. */
-    padding-top: .25em; /* This creates some space between the element and the border.  */
-    border-bottom: .17em solid #77a466 ; /* This creates the border. Replace black with whatever color you want. */
-
-}
-
 header nav {
-	float: left;
-	padding-left:10em;
-	text-align: center;
+	margin: 0 auto;
+	text-align: center; 
+	display: block;
+	padding: 2em 0;
 }
+
 header nav ul {
 	margin: 0;
-	padding: 0 0 0.5em 0;
+	padding:0;
+	
 }
+
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
@@ -103,12 +90,12 @@ header nav ul li a{
 
 .main-image {
 	height: auto;
-	float: left
+	display: block;
+	margin: 0 1em;
 }
 .main-image img {
-	width: 90%;
+	width: 100%;
 	border: .18em solid #77a466;
-	margin-left:1em;
 }
 
 .main-title {
@@ -190,4 +177,61 @@ footer h4 span{
 	text-transform: lowercase;
 	color: #77a466;
 	font-size:0.875em;
+}
+
+
+/***** MEDIA QUERIES ********/
+
+/****** TABLET **********/
+
+@media (min-width:768px) {
+.section-one,
+.section-two,
+.section-three {
+	width: 33%;
+	height: auto;
+	display:inline;
+	border-top: .0625em solid #eee;
+}
+
+.section-one h4 {
+	font-size:0.75em;
+	padding: 0.833em 2.5em;
+}
+
+.section-two {
+	border-left: .0625em solid #eee;
+	border-right: .0625em  solid #eee;
+}
+
+
+}
+
+/****** DESKTOP **********/
+
+@media (min-width:940px) {
+header {
+	margin: 0 1.15em;
+}
+
+header h1 {
+	margin: 0;
+	float:left;
+	border-bottom:none;
+}
+
+
+header nav {
+	text-align: left;
+	float:right;
+	padding: 3.5em 0;
+}
+
+
+header nav ul li {
+	display: inline;
+	padding: 0 0.5em;
+}
+
+
 }
