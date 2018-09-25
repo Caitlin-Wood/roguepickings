@@ -46,7 +46,6 @@ p {
 /*header module; 14pt = 1em*/
 header {
 	height: 110px;
-	border-bottom: .21em solid #77a466;
 	margin: 0 auto;
 	font-size:0.875em;
 }
@@ -55,26 +54,38 @@ header h1 {
 	float: left;
 	margin: 0;
 	font-size:2.143em;
-	padding: 1.267em 0;
+	padding: 1.267em 0 0.5em 1.75em;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
+header h1:after {
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 75%; /* Change this to whatever width you want. */
+    padding-top: .25em; /* This creates some space between the element and the border.  */
+    border-bottom: .17em solid #77a466 ; /* This creates the border. Replace black with whatever color you want. */
+
+}
+
 header nav {
-	float: right;
-	padding: 3.285em 0;
+	float: left;
+	padding-left:10em;
+	text-align: center;
 }
 header nav ul {
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0.5em 0;
 }
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 1em;
-	padding: 0 .71em;
-	display: inline;
+	padding: .5em 0;
+	display: block;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -96,7 +107,8 @@ header nav ul li a{
 }
 .main-image img {
 	width: 100%;
-	border-bottom: .18em solid #77a466;
+	border: .18em solid #77a466;
+	
 }
 
 .main-title {
